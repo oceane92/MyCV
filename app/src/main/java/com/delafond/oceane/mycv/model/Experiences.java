@@ -1,4 +1,4 @@
-package com.delafond.oceane.mycv;
+package com.delafond.oceane.mycv.model;
 
 public class Experiences {
 

@@ -2,9 +2,11 @@ package com.delafond.oceane.mycv;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.widget.ListView;
+
+import com.delafond.oceane.mycv.model.ExperienceAdapter;
+import com.delafond.oceane.mycv.model.Experiences;
 
 import java.util.ArrayList;
 
