@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MyCV</string>
-    <string name="nom">Océane Delafond - Developpeuse</string>
+    <string name="nom">Océane Delafond</string>
+    <string name="metier"><i>Developpeuse</i></string>
     <string name="email">Email : oceane.delafond@gmail.com</string>
     <string name="tel">Téléphone : 065927899</string>
     <string name="adresse">Adresse : 9 rue de la pastorale d\'Issy 92130 Issy-les-Moulineaux</string>

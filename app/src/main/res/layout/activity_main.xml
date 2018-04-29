@@ -13,60 +13,85 @@
         android:layout_height="wrap_content"
         android:text="@string/nom"
         android:textAlignment="center"
+        android:textSize="25dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/colorWhite"
+        android:background="#990000"/>
+
+    <TextView
+        android:id="@+id/textViewMetier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/metier"
+        android:textAlignment="center"
         android:textSize="20dp"
-        android:layout_marginTop="10dp" />
+        android:paddingBottom="10dp"
+        android:textColor="@color/colorWhite"
+        android:background="#990000"/>
 
     <ImageView
-    android:id="@+id/imageView2"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="20dp"
-    app:srcCompat="@drawable/profil_image" />
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/profil" />
 
     <TextView
         android:id="@+id/textViewMail"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_margin="4dp"
+        android:layout_marginLeft="30dp"
         android:text="@string/email" />
 
     <TextView
         android:id="@+id/textViewTel"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_margin="4dp"
+        android:layout_marginLeft="30dp"
         android:text="@string/tel" />
 
     <TextView
         android:id="@+id/textViewAdresse"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_margin="4dp"
+        android:layout_marginLeft="30dp"
         android:text="@string/adresse" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="5dp">
 
         <Button
             android:id="@+id/buttonCompetences"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/buttoncustom"
+            android:textColor="@color/colorWhite"
+            android:layout_margin="4dp"
             android:text="COMPETENCES" />
 
         <Button
             android:id="@+id/buttonFormations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/buttoncustom"
+            android:textColor="@color/colorWhite"
+            android:layout_margin="4dp"
             android:text="FORMATIONS" />
 
         <Button
             android:id="@+id/buttonExperience"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/buttoncustom"
+            android:textColor="@color/colorWhite"
+            android:layout_margin="4dp"
             android:text="EXPERIENCES" />
     </LinearLayout>
 

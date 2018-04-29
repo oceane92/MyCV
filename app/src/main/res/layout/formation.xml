@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:padding="5dp"
-        android:textSize="25dp"
-        android:text="@string/formation"/>
+        android:padding="10dp"
+        android:textSize="30dp"
+        android:background="@color/colorBlack"
+        android:textColor="@color/colorWhite"
+        android:text="@string/formation" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
+        android:layout_margin="20dp"
         android:src="@drawable/diplome" />
 
     <ListView

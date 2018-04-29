@@ -1,57 +1,71 @@
 package com.delafond.oceane.mycv.model;
 
 import android.app.Activity;
-import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.delafond.oceane.mycv.R;
 
-import java.util.ArrayList;
+public class FormationAdapter extends ArrayAdapter<String> {
 
-public class FormationAdapter extends BaseAdapter {
+    private String[] diplome;
+    private String[] ecole;
+    private String[] annee;
+    private Integer[] imgid;
+    private Activity context;
 
-    public Activity context;
-    public ArrayList<Formation> formations;
+    public FormationAdapter(Activity context, String[] diplome, String[] ecole, String[] annee, Integer[] imgid) {
+        super(context, R.layout.formation_item, diplome);
 
-    public FormationAdapter(Activity context, ArrayList<Formation> formations) {
         this.context = context;
-        this.formations = formations;
+        this.diplome = diplome;
+        this.ecole = ecole;
+        this.annee = annee;
+        this.imgid = imgid;
     }
 
+    @NonNull
     @Override
-    public String toString() {
-        return "FormationAdapter{" +
-                "context=" + context +
-                ", formations=" + formations +
-                '}';
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        View r = convertView;
+        FormationAdapter.ViewHolder viewHolder = null;
+        if (r == null) {
+            LayoutInflater layoutInflater = context.getLayoutInflater();
+            r = layoutInflater.inflate(R.layout.formation_item, null, true);
+            viewHolder = new FormationAdapter.ViewHolder(r);
+            r.setTag(viewHolder);
+        } else {
+            viewHolder = (FormationAdapter.ViewHolder) r.getTag();
+        }
+        viewHolder.ivw.setImageResource(imgid[position]);
+
+        viewHolder.tvw1.setText(diplome[position]);
+        viewHolder.tvw2.setText(ecole[position]);
+        viewHolder.tvw3.setText(annee[position]);
+
+        return r;
+
     }
 
-    @Override
-    public int getCount() {
-        return this.formations.size();
-    }
+    class ViewHolder {
 
-    @Override
-    public Object getItem(int position) {
-        return this.formations.get(position);
-    }
+        TextView tvw1;
+        TextView tvw2;
+        TextView tvw3;
+        ImageView ivw;
 
-    @Override
-    public long getItemId(int position) {
-        return getItem(position).hashCode();
-    }
+        ViewHolder(View v) {
+            tvw1 = (TextView) v.findViewById(R.id.textViewDiplome);
+            tvw2 = (TextView) v.findViewById(R.id.textViewEcole);
+            tvw3 = (TextView) v.findViewById(R.id.textViewAnnee);
+            ivw = (ImageView) v.findViewById(R.id.imageViewFormation);
+        }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.formation_item, null);
-        TextView textView = (TextView) rowView.findViewById(R.id.textViewFormationInfo);
-        textView.setText(this.formations.get(position).toString());
-
-        return rowView;
     }
 }
